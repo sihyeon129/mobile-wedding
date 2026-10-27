@@ -8,8 +8,6 @@
 
   <!-- ========================================================================
        [카카오톡 / SNS 공유 미리보기 설정 (Open Graph)]
-       * 웹 호스팅(GitHub Pages, Vercel 등) 배포 후 카톡에 링크를 공유하면
-         아래 설정된 대표 사진과 문구가 카톡 채팅창 미리보기 카드로 표시됩니다.
        ======================================================================== -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="임시현 ♥ 이윤지 결혼식에 초대합니다" />
@@ -81,7 +79,7 @@
       letter-spacing: -0.02em;
       word-break: keep-all;
       scroll-behavior: smooth;
-      touch-action: pan-x pan-y; /* 핀치 줌 및 더블탭 줌 제스처 제한 */
+      touch-action: pan-x pan-y;
     }
 
     img {
@@ -151,7 +149,6 @@
       margin: 0 auto 28px;
     }
 
-    /* Intersection Observer Fade-in 효과 */
     .fade-in {
       opacity: 0;
       transform: translateY(28px);
@@ -165,7 +162,6 @@
       transform: translateY(0);
     }
 
-    /* 버튼 공통 스타일 */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -280,7 +276,6 @@
       margin-bottom: 36px;
     }
 
-    /* D-Day 카운트다운 박스 */
     .countdown-wrap {
       background-color: rgba(245, 242, 235, 0.85);
       border: 1px solid var(--border-light);
@@ -386,7 +381,6 @@
       font-size: 1.1rem;
     }
 
-    /* 전화/문자 빠른 연결 카드 그리드 */
     .contact-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -519,7 +513,6 @@
       margin-top: 16px;
     }
 
-    /* 라이트박스 모달 */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -603,10 +596,10 @@
     .lightbox-next { right: 8px; }
 
     /* ==========================================================================
-       6. 섹션 4: 오시는 길 & 내비게이션 딥링크 (Location)
+       6. 섹션 4: 오시는 길 & 업그레이드된 지도 뷰 (Location)
        ========================================================================== */
     .venue-box {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .venue-name {
@@ -629,23 +622,86 @@
       margin-bottom: 14px;
     }
 
-    /* 지도 프리뷰 컨테이너 (OpenStreetMap iframe + 커스텀 핀 오버레이) */
-    .map-frame {
+    /* 지도 카드 래퍼 */
+    .map-card-wrapper {
       width: 100%;
-      height: 230px;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--border-light);
-      margin-bottom: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 14px;
+      background-color: var(--bg-card);
+    }
+
+    /* 지도 상단 커스텀 핀 헤더 바 */
+    .map-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 16px;
+      background-color: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+    }
+
+    .map-top-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .map-top-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #191919;
+      background-color: #FEE500;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    /* 지도 뷰 컨테이너 */
+    .map-frame {
+      width: 100%;
+      height: 260px;
       position: relative;
-      background-color: #EAE6DF;
+      background-color: #F2EFE9;
     }
 
     .map-frame iframe {
       width: 100%;
       height: 100%;
       border: 0;
-      filter: sepia(12%) contrast(96%);
+    }
+
+    .map-custom-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      cursor: pointer;
+    }
+
+    #kakaoMapCanvas {
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    /* 카카오맵 커스텀 오버레이 말풍선 */
+    .kakao-custom-pin {
+      background: #2C2C2C;
+      color: #FFFFFF;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transform: translateY(-42px);
+      white-space: nowrap;
     }
 
     /* 3대 내비게이션 버튼 */
@@ -1076,9 +1132,20 @@
         </button>
       </div>
 
-      <!-- 지도 영역 (OpenStreetMap 내장 뷰) -->
-      <div class="map-frame">
-        <iframe id="mapIframe" title="예식장 위치 지도" loading="lazy"></iframe>
+      <!-- 업그레이드된 지도 영역 (카카오맵 API / 카카오맵 캡처 이미지 / 한글 지도 하이브리드) -->
+      <div class="map-card-wrapper">
+        <div class="map-top-bar">
+          <span class="map-top-title" id="mapTopBadgeText">📍 세인트 메리엘 세인트홀 (2F)</span>
+          <a href="#" class="map-top-link" id="mapTopKakaoBtn">카카오맵 열기 ↗</a>
+        </div>
+        <div class="map-frame">
+          <!-- 1순위: 실제 카카오맵 SDK 캔버스 (kakaoAppKey 입력 시 활성화) -->
+          <div id="kakaoMapCanvas"></div>
+          <!-- 2순위: 카카오맵 캡처 이미지 또는 약도 이미지 (customMapImage 입력 시 활성화) -->
+          <img id="customMapImg" class="map-custom-img" src="" alt="예식장 약도" />
+          <!-- 3순위(기본): API 키 없이도 깔끔하게 한글로 나오는 한국어 지도 뷰 -->
+          <iframe id="mapIframe" title="예식장 위치 지도" loading="lazy"></iframe>
+        </div>
       </div>
 
       <!-- 3대 내비게이션 딥링크 버튼 -->
@@ -1289,6 +1356,13 @@
         tel: "Tel. 02-555-0000",
         lat: 37.49606, // 위도
         lng: 127.03286, // 경도
+
+        // [지도 옵션 A] 카카오맵 화면 캡처 이미지나 약도 이미지를 넣고 싶을 때 파일명 입력 (예: "./kakao_map.jpg")
+        customMapImage: "",
+
+        // [지도 옵션 B] 웹 배포 후 실제 움직이는 카카오맵을 띄우고 싶을 때 카카오 Developers JavaScript 키 입력
+        kakaoAppKey: "",
+
         transports: [
           {
             title: "🚇 지하철 이용 시",
@@ -1325,7 +1399,7 @@
         }
       ],
 
-      // 구글 폼(Google Forms) 외부 링크 (입력 시 하단에 구글 폼 이동 버튼 활성화, 비워두면 자체 폼만 작동)
+      // 구글 폼(Google Forms) 외부 링크
       rsvpGoogleFormUrl: ""
     };
 
@@ -1357,7 +1431,7 @@
       }, 2400);
     }
 
-    // 클립보드 복사 함수 (모던 API + 구형 브라우저 폴백 지원)
+    // 클립보드 복사 함수
     function copyToClipboard(text, successMsg) {
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(() => {
@@ -1389,48 +1463,34 @@
      * [보안 모듈] 화면 확대(핀치 줌/더블탭) 및 사진 저장/캡처 단축키 차단
      ****************************************************************************/
     function initSecurityProtection() {
-      // 1. iOS 사파리 핀치 줌(두 손가락 확대/축소) 차단
       document.addEventListener("gesturestart", (e) => e.preventDefault(), { passive: false });
       document.addEventListener("gesturechange", (e) => e.preventDefault(), { passive: false });
       document.addEventListener("gestureend", (e) => e.preventDefault(), { passive: false });
 
-      // 2. 멀티터치(두 손가락 이상) 터치 및 이동 확대 차단
       document.addEventListener("touchstart", (e) => {
-        if (e.touches.length > 1) {
-          e.preventDefault();
-        }
+        if (e.touches.length > 1) e.preventDefault();
       }, { passive: false });
 
       document.addEventListener("touchmove", (e) => {
-        if (e.touches.length > 1) {
-          e.preventDefault();
-        }
+        if (e.touches.length > 1) e.preventDefault();
       }, { passive: false });
 
-      // 3. 더블 탭(빠르게 두 번 터치) 확대 차단
       let lastTouchEnd = 0;
       document.addEventListener("touchend", (e) => {
         const now = Date.now();
-        if (now - lastTouchEnd <= 300) {
-          e.preventDefault();
-        }
+        if (now - lastTouchEnd <= 300) e.preventDefault();
         lastTouchEnd = now;
       }, { passive: false });
 
-      // 4. PC Ctrl + 마우스 휠 확대/축소 차단
       window.addEventListener("wheel", (e) => {
-        if (e.ctrlKey || e.metaKey) {
-          e.preventDefault();
-        }
+        if (e.ctrlKey || e.metaKey) e.preventDefault();
       }, { passive: false });
 
-      // 5. 우클릭 및 모바일 길게 누르기 컨텍스트 메뉴(이미지 저장 등) 차단
       document.addEventListener("contextmenu", (e) => {
         e.preventDefault();
         return false;
       });
 
-      // 6. 이미지 및 텍스트 드래그 차단 (입력창 제외)
       document.addEventListener("dragstart", (e) => {
         e.preventDefault();
         return false;
@@ -1443,12 +1503,9 @@
         }
       });
 
-      // 7. 캡처 및 저장/개발자도구 단축키 차단 (PrintScreen, F12, Ctrl+S, Ctrl+P, Ctrl+U 등)
       document.addEventListener("keydown", (e) => {
         const key = e.key.toLowerCase();
         const isCtrlOrCmd = e.ctrlKey || e.metaKey;
-
-        // F12 또는 캡처/소스보기/인쇄/저장 단축키 차단
         if (
           e.key === "F12" ||
           e.key === "PrintScreen" ||
@@ -1462,7 +1519,6 @@
         }
       });
 
-      // PrintScreen 키를 뗄 때 클립보드 초기화 시도
       document.addEventListener("keyup", (e) => {
         if (e.key === "PrintScreen") {
           if (navigator.clipboard && window.isSecureContext) {
@@ -1528,7 +1584,6 @@
       const { groom, bride, invitationPoem } = WEDDING_CONFIG;
       document.getElementById("invitationPoem").textContent = invitationPoem;
 
-      // 혼주·신랑신부 소개
       document.getElementById("familyInfoBox").innerHTML = `
         <div class="family-row">
           <span class="family-parents">${groom.father.name} · ${groom.mother.name}</span>
@@ -1542,7 +1597,6 @@
         </div>
       `;
 
-      // 신랑/신부 연락처 카드
       const phoneSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
       const smsSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`;
 
@@ -1565,7 +1619,6 @@
         </div>
       `;
 
-      // 혼주 연락처 패널
       const panel = document.getElementById("parentsContactPanel");
       panel.innerHTML = `
         <div class="parents-group-title" style="margin-top:2px;">신랑측 혼주</div>
@@ -1608,7 +1661,7 @@
       });
     }
 
-    // 3. 갤러리 및 라이트박스 모달 (터치 스와이프 지원)
+    // 3. 갤러리 및 라이트박스 모달
     function initGallerySection() {
       const grid = document.getElementById("galleryGrid");
       const modal = document.getElementById("lightboxModal");
@@ -1660,13 +1713,10 @@
         if (e.target === modal) closeLightbox();
       });
 
-      // 모바일 터치 스와이프 제스처 지원
       let touchStartX = 0;
       const touchArea = document.getElementById("lightboxTouchArea");
       touchArea.addEventListener("touchstart", (e) => {
-        if (e.touches.length === 1) {
-          touchStartX = e.changedTouches[0].screenX;
-        }
+        if (e.touches.length === 1) touchStartX = e.changedTouches[0].screenX;
       }, { passive: true });
 
       touchArea.addEventListener("touchend", (e) => {
@@ -1678,33 +1728,28 @@
       }, { passive: true });
     }
 
-    // 4. 오시는 길 & 내비게이션 딥링크
+    // 4. 오시는 길 & 하이브리드 지도 렌더링
     function initLocationSection() {
       const loc = WEDDING_CONFIG.location;
       document.getElementById("locVenueName").textContent = `${loc.venueName} ${loc.hallName}`;
       document.getElementById("locVenueAddress").textContent = loc.address;
       document.getElementById("locVenueTel").textContent = loc.tel;
+      document.getElementById("mapTopBadgeText").textContent = `📍 ${loc.venueName} ${loc.hallName}`;
 
       // 주소 복사
       document.getElementById("copyAddressBtn").addEventListener("click", () => {
         copyToClipboard(loc.address, "도로명 주소가 복사되었습니다.");
       });
 
-      // OpenStreetMap 지도 임베드
-      const bbox = `${loc.lng - 0.0035}%2C${loc.lat - 0.0025}%2C${loc.lng + 0.0035}%2C${loc.lat + 0.0025}`;
-      document.getElementById("mapIframe").src =
-        `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${loc.lat}%2C${loc.lng}`;
-
-      // 모바일 여부 판별
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       const encodedName = encodeURIComponent(loc.venueName);
 
-      // 네이버 지도 딥링크 + 웹 대체 링크
-      document.getElementById("btnNaverMap").addEventListener("click", (e) => {
-        e.preventDefault();
-        const webUrl = `https://map.naver.com/p/search/${encodedName}`;
+      // 카카오맵 실행 공통 함수
+      function openKakaoMap(e) {
+        if (e) e.preventDefault();
+        const webUrl = `https://map.kakao.com/link/to/${encodedName},${loc.lat},${loc.lng}`;
         if (isMobile) {
-          const appUrl = `nmap://place?lat=${loc.lat}&lng=${loc.lng}&name=${encodedName}&appname=wedding.invitation`;
+          const appUrl = `kakaomap://look?p=${loc.lat},${loc.lng}`;
           const clickedAt = +new Date();
           window.location.href = appUrl;
           setTimeout(() => {
@@ -1713,14 +1758,51 @@
         } else {
           window.open(webUrl, "_blank");
         }
-      });
+      }
 
-      // 카카오맵 딥링크 + 웹 대체 링크
-      document.getElementById("btnKakaoMap").addEventListener("click", (e) => {
+      document.getElementById("mapTopKakaoBtn").addEventListener("click", openKakaoMap);
+      document.getElementById("btnKakaoMap").addEventListener("click", openKakaoMap);
+
+      // 지도 표시 분기 처리 (1순위: 카카오맵 캡처/약도 이미지, 2순위: 카카오맵 JS API, 3순위: 한글 구글맵 뷰)
+      const mapIframe = document.getElementById("mapIframe");
+      const customMapImg = document.getElementById("customMapImg");
+      const kakaoCanvas = document.getElementById("kakaoMapCanvas");
+
+      if (loc.customMapImage && loc.customMapImage.trim() !== "") {
+        mapIframe.style.display = "none";
+        customMapImg.src = loc.customMapImage;
+        customMapImg.style.display = "block";
+        customMapImg.addEventListener("click", openKakaoMap);
+      } else if (loc.kakaoAppKey && loc.kakaoAppKey.trim() !== "" && window.location.protocol !== "file:") {
+        mapIframe.style.display = "none";
+        kakaoCanvas.style.display = "block";
+        const script = document.createElement("script");
+        script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${loc.kakaoAppKey}&autoload=false`;
+        script.onload = () => {
+          kakao.maps.load(() => {
+            const centerPos = new kakao.maps.LatLng(loc.lat, loc.lng);
+            const map = new kakao.maps.Map(kakaoCanvas, { center: centerPos, level: 3 });
+            new kakao.maps.Marker({ position: centerPos, map: map });
+            new kakao.maps.CustomOverlay({
+              position: centerPos,
+              map: map,
+              content: `<div class="kakao-custom-pin">${loc.venueName}</div>`
+            });
+          });
+        };
+        document.head.appendChild(script);
+      } else {
+        // 별도 API 키 없이 로컬 파일(file://)에서도 깔끔한 한글 도로명과 지하철역이 나오는 지도 임베드
+        const query = encodeURIComponent(`${loc.address} ${loc.venueName}`);
+        mapIframe.src = `https://maps.google.com/maps?q=${query}&t=&z=16&ie=UTF8&iwloc=&output=embed&hl=ko`;
+      }
+
+      // 네이버 지도 딥링크
+      document.getElementById("btnNaverMap").addEventListener("click", (e) => {
         e.preventDefault();
-        const webUrl = `https://map.kakao.com/link/to/${encodedName},${loc.lat},${loc.lng}`;
+        const webUrl = `https://map.naver.com/p/search/${encodedName}`;
         if (isMobile) {
-          const appUrl = `kakaomap://look?p=${loc.lat},${loc.lng}`;
+          const appUrl = `nmap://place?lat=${loc.lat}&lng=${loc.lng}&name=${encodedName}&appname=wedding.invitation`;
           const clickedAt = +new Date();
           window.location.href = appUrl;
           setTimeout(() => {
@@ -1741,7 +1823,7 @@
         }
       });
 
-      // 대중교통 및 주차 안내 렌더링
+      // 대중교통 안내 렌더링
       const transportList = document.getElementById("transportList");
       loc.transports.forEach((item) => {
         const div = document.createElement("div");
@@ -1784,7 +1866,6 @@
           </div>
         `;
 
-        // 아코디언 헤더 클릭 이벤트
         accItem.querySelector(".accordion-header").addEventListener("click", () => {
           accItem.classList.toggle("active");
         });
@@ -1792,7 +1873,6 @@
         container.appendChild(accItem);
       });
 
-      // 복사 버튼 이벤트 위임
       container.addEventListener("click", (e) => {
         const copyBtn = e.target.closest(".btn-copy");
         if (!copyBtn) return;
@@ -1803,7 +1883,6 @@
 
     // 6. 참석 여부(RSVP) 폼 제어
     function initRsvpSection() {
-      // 라디오 버튼 스타일 토글
       document.querySelectorAll(".radio-group").forEach((group) => {
         group.addEventListener("change", (e) => {
           if (e.target.type === "radio") {
@@ -1813,14 +1892,12 @@
         });
       });
 
-      // 구글 폼 URL이 설정된 경우 버튼 활성화
       const googleFormBtn = document.getElementById("googleFormLinkBtn");
       if (WEDDING_CONFIG.rsvpGoogleFormUrl && WEDDING_CONFIG.rsvpGoogleFormUrl.trim() !== "") {
         googleFormBtn.href = WEDDING_CONFIG.rsvpGoogleFormUrl;
         googleFormBtn.style.display = "inline-flex";
       }
 
-      // 기본 폼 제출 이벤트
       document.getElementById("rsvpForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const name = document.getElementById("guestName").value.trim();
@@ -1838,7 +1915,6 @@
         } else {
           showToast(`${name}님(${side}/${attendance}/${meal}) 참석 의사가 전달되었습니다.`);
           e.target.reset();
-          // 선택 상태 초기화
           document.querySelectorAll(".radio-group").forEach((group) => {
             const labels = group.querySelectorAll(".radio-label");
             labels.forEach((l, i) => l.classList.toggle("selected", i === 0));
@@ -1859,9 +1935,7 @@
         if (navigator.share) {
           try {
             await navigator.share(shareData);
-          } catch (err) {
-            // 사용자가 공유 창을 닫은 경우 무시
-          }
+          } catch (err) {}
         } else {
           copyToClipboard(window.location.href, "청첩장 링크가 복사되었습니다. 카카오톡에 붙여넣어 주세요.");
         }
