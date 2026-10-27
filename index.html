@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <!-- [보안 1] 모바일 화면 확대(Zoom) 전면 제한 뷰포트 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>임시현 ♥ 이윤지 결혼식에 초대합니다</title>
+
+  <!-- ========================================================================
+       [카카오톡 / SNS 공유 미리보기 설정 (Open Graph)]
+       * 웹 호스팅(GitHub Pages, Vercel 등) 배포 후 카톡에 링크를 공유하면
+         아래 설정된 대표 사진과 문구가 카톡 채팅창 미리보기 카드로 표시됩니다.
+       ======================================================================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="임시현 ♥ 이윤지 결혼식에 초대합니다" />
+  <meta property="og:description" content="2027년 6월 6일 일요일 오전 11시 | 세인트 메리엘 세인트홀 (2F)" />
+  <meta property="og:image" content="./260929_ARVE_2000.JPG" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="임시현 ♥ 이윤지 결혼식에 초대합니다" />
+  <meta name="twitter:description" content="2027년 6월 6일 일요일 오전 11시 | 세인트 메리엘 세인트홀 (2F)" />
+  <meta name="twitter:image" content="./260929_ARVE_2000.JPG" />
+
+  <!-- 웹폰트 CDN: Pretendard (본문) & Nanum Myeongjo / Cormorant Garamond (헤더/영문) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS 변수 및 기본 리셋 & 보안 스타일 (톤앤매너 설정)
+       ========================================================================== */
+    :root {
+      --bg-outer: #E8E4DC;         /* PC 화면 바깥 배경 (밝은 웜그레이) */
+      --bg-primary: #FDFBF7;       /* 메인 배경 (따뜻한 아이보리) */
+      --bg-secondary: #F5F2EB;     /* 서브 섹션 배경 (소프트 베이지) */
+      --bg-card: #FFFFFF;          /* 카드 배경 */
+      --text-main: #2C2C2C;        /* 메인 텍스트 (짙은 차콜) */
+      --text-sub: #555555;         /* 보조 텍스트 (미디엄 차콜) */
+      --text-muted: #8C857B;       /* 캡션/연한 텍스트 */
+      --accent-rose: #B89282;      /* 포인트 컬러 (뮤트 로즈베이지) */
+      --accent-taupe: #8E7DBE;     /* 보조 포인트 */
+      --warm-taupe: #9A8678;       /* 웜토프 버튼/보더 포인트 */
+      --warm-taupe-dark: #7D6B5D;  /* 호버/액티브 웜토프 */
+      --border-light: #E8E2D9;     /* 은은한 구분선 */
+      --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --font-serif-kr: 'Nanum Myeongjo', serif;
+      --font-serif-en: 'Cormorant Garamond', 'Nanum Myeongjo', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      /* [보안 2] 텍스트/이미지 길게 누르기 팝업 및 무단 선택 방지 */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* 참석 여부(RSVP) 입력 폼은 정상적으로 타이핑 가능하도록 허용 */
+    input, textarea {
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+      user-select: text !important;
+    }
+
+    /* [보안 3] 이미지 드래그 저장 방지 및 더블탭 확대 방지 */
+    html, body {
+      background-color: var(--bg-outer);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      scroll-behavior: smooth;
+      touch-action: pan-x pan-y; /* 핀치 줌 및 더블탭 줌 제스처 제한 */
+    }
+
+    img {
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+      pointer-events: auto;
+    }
+
+    /* [보안 4] 인쇄 및 PDF 캡처 시도 시 화면 숨김 */
+    @media print {
+      body {
+        display: none !important;
+      }
+    }
+
+    /* PC에서도 중앙 모바일 뷰포트(480px) 유지 */
+    .mobile-wrapper {
+      max-width: 480px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background-color: var(--bg-primary);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       2. 공통 타이포그래피 & 섹션 레이아웃 & Fade-in 애니메이션
+       ========================================================================== */
+    section {
+      padding: 72px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    section.bg-alt {
+      background-color: var(--bg-secondary);
+    }
+
+    .section-eng-title {
+      font-family: var(--font-serif-en);
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-rose);
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .section-kr-title {
+      font-family: var(--font-serif-kr);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .divider {
+      width: 1px;
+      height: 40px;
+      background-color: var(--border-light);
+      margin: 0 auto 28px;
+    }
+
+    /* Intersection Observer Fade-in 효과 */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 버튼 공통 스타일 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border-light);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background-color: var(--warm-taupe);
+      border-color: var(--warm-taupe);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--warm-taupe-dark);
+    }
+
+    /* ==========================================================================
+       3. 섹션 1: 메인 커버 (Main Cover)
+       ========================================================================== */
+    .cover-section {
+      padding: 48px 24px 64px;
+      background: linear-gradient(180deg, #F7F3EB 0%, var(--bg-primary) 100%);
+    }
+
+    .cover-top-date {
+      font-family: var(--font-serif-en);
+      font-size: 1.05rem;
+      letter-spacing: 0.22em;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .cover-top-sub {
+      font-family: var(--font-serif-en);
+      font-size: 0.78rem;
+      letter-spacing: 0.3em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .cover-image-frame {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 180px 180px 16px 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(125, 107, 93, 0.12);
+      margin-bottom: 32px;
+      position: relative;
+      background-color: var(--bg-secondary);
+    }
+
+    .cover-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s ease;
+    }
+
+    .cover-names-en {
+      font-family: var(--font-serif-en);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--accent-rose);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .cover-names-kr {
+      font-family: var(--font-serif-kr);
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text-main);
+      margin-bottom: 20px;
+    }
+
+    .cover-names-kr span.amp {
+      font-size: 1.1rem;
+      color: var(--accent-rose);
+      margin: 0 8px;
+      font-weight: 400;
+    }
+
+    .cover-datetime {
+      font-size: 0.98rem;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+    }
+
+    .cover-venue {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+      margin-bottom: 36px;
+    }
+
+    /* D-Day 카운트다운 박스 */
+    .countdown-wrap {
+      background-color: rgba(245, 242, 235, 0.85);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 20px 16px;
+      margin-top: 12px;
+    }
+
+    .countdown-boxes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .cd-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      min-width: 62px;
+      padding: 10px 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .cd-num {
+      font-family: var(--font-serif-en);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.2;
+      display: block;
+    }
+
+    .cd-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .cd-colon {
+      font-family: var(--font-serif-en);
+      font-size: 1.2rem;
+      color: var(--accent-rose);
+      font-weight: 600;
+    }
+
+    .countdown-message {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    .countdown-message strong {
+      color: var(--accent-rose);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       4. 섹션 2: 초대 문구 및 혼주/연락처 (Invitation)
+       ========================================================================== */
+    .invitation-poem {
+      font-family: var(--font-serif-kr);
+      font-size: 0.98rem;
+      line-height: 2.1;
+      color: var(--text-sub);
+      margin-bottom: 44px;
+      white-space: pre-line;
+    }
+
+    .family-info-box {
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 24px 0;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .family-row {
+      font-size: 1rem;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .family-parents {
+      font-weight: 500;
+    }
+
+    .family-relation {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0 4px;
+    }
+
+    .family-child {
+      font-family: var(--font-serif-kr);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* 전화/문자 빠른 연결 카드 그리드 */
+    .contact-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .contact-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 16px 12px;
+    }
+
+    .contact-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+      display: block;
+    }
+
+    .contact-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--warm-taupe-dark);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .icon-btn:active {
+      transform: scale(0.92);
+      background-color: var(--warm-taupe);
+      color: #fff;
+    }
+
+    .parents-contact-toggle {
+      width: 100%;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      background-color: transparent;
+    }
+
+    .parents-contact-panel {
+      display: none;
+      margin-top: 12px;
+      background-color: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 18px 16px;
+      border: 1px solid var(--border-light);
+    }
+
+    .parents-contact-panel.open {
+      display: block;
+    }
+
+    .parents-group-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-rose);
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .parents-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border-light);
+      font-size: 0.92rem;
+    }
+
+    .parents-row:last-child {
+      border-bottom: none;
+    }
+
+    /* ==========================================================================
+       5. 섹션 3: 갤러리 & 라이트박스 모달 (Gallery)
+       ========================================================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      background-color: #EAE5DC;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    /* 라이트박스 모달 */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(20, 18, 16, 0.92);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      user-select: none;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-header {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .lightbox-close {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img-container {
+      max-width: 440px;
+      width: 100%;
+      max-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .lightbox-img-container img {
+      max-width: 100%;
+      max-height: 78vh;
+      border-radius: 8px;
+      object-fit: contain;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.18);
+      border: none;
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+
+    /* ==========================================================================
+       6. 섹션 4: 오시는 길 & 내비게이션 딥링크 (Location)
+       ========================================================================== */
+    .venue-box {
+      margin-bottom: 24px;
+    }
+
+    .venue-name {
+      font-family: var(--font-serif-kr);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .venue-address {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+    }
+
+    .venue-tel {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* 지도 프리뷰 컨테이너 (OpenStreetMap iframe + 커스텀 핀 오버레이) */
+    .map-frame {
+      width: 100%;
+      height: 230px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      margin-bottom: 16px;
+      position: relative;
+      background-color: #EAE6DF;
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: sepia(12%) contrast(96%);
+    }
+
+    /* 3대 내비게이션 버튼 */
+    .nav-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .nav-btn {
+      padding: 11px 6px;
+      border-radius: 10px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .nav-badge {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .badge-naver { background-color: #03C75A; }
+    .badge-kakao { background-color: #FEE500; color: #191919; }
+    .badge-tmap  { background-color: #F02E65; }
+
+    .transport-list {
+      text-align: left;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .transport-item {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed var(--border-light);
+    }
+
+    .transport-item:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .transport-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--warm-taupe-dark);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .transport-desc {
+      font-size: 0.86rem;
+      color: var(--text-sub);
+      line-height: 1.65;
+      white-space: pre-line;
+    }
+
+    /* ==========================================================================
+       7. 섹션 5: 마음 전하실 곳 - 아코디언 (Bank Accounts)
+       ========================================================================== */
+    .account-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+    }
+
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      background-color: var(--bg-card);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 16px 20px;
+      background-color: var(--bg-secondary);
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    .accordion-arrow {
+      transition: transform 0.25s ease;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .accordion-item.active .accordion-arrow {
+      transform: rotate(180deg);
+    }
+
+    .accordion-body {
+      display: none;
+      padding: 6px 18px;
+      background-color: var(--bg-card);
+    }
+
+    .accordion-item.active .accordion-body {
+      display: block;
+    }
+
+    .account-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+    }
+
+    .account-row:last-child {
+      border-bottom: none;
+    }
+
+    .account-holder {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .account-HolderName {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .account-number {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      letter-spacing: -0.01em;
+    }
+
+    .btn-copy {
+      padding: 7px 13px;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      cursor: pointer;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .btn-copy:active {
+      background-color: var(--warm-taupe);
+      color: #fff;
+    }
+
+    /* ==========================================================================
+       8. 섹션 6: 참석 여부 전달 (RSVP)
+       ========================================================================== */
+    .rsvp-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: left;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .radio-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .radio-group.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 8px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      cursor: pointer;
+      background-color: var(--bg-primary);
+      transition: all 0.2s;
+    }
+
+    .radio-label input {
+      display: none;
+    }
+
+    .radio-label.selected {
+      background-color: var(--warm-taupe);
+      border-color: var(--warm-taupe);
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--warm-taupe);
+    }
+
+    .rsvp-submit-wrap {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       9. 푸터 & 공유 버튼 & 토스트(Toast) 알림
+       ========================================================================== */
+    footer {
+      padding: 36px 20px 48px;
+      text-align: center;
+      background-color: var(--bg-secondary);
+      border-top: 1px solid var(--border-light);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .share-btn-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .btn-kakao-share {
+      background-color: #FEE500;
+      border-color: #F2D900;
+      color: #191919;
+      font-weight: 600;
+      font-size: 0.86rem;
+      padding: 11px 18px;
+      border-radius: 8px;
+    }
+
+    .footer-names {
+      font-family: var(--font-serif-en);
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background-color: rgba(44, 44, 44, 0.92);
+      color: #FFFFFF;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 500;
+      z-index: 10000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+  <div class="mobile-wrapper" id="invitationContent">
+
+    <!-- ========================================================================
+         1. 메인 커버 (Main Cover)
+         ======================================================================== -->
+    <section class="cover-section fade-in">
+      <div class="cover-top-date" id="coverTopDate">2027. 06. 06</div>
+      <div class="cover-top-sub">OUR WEDDING DAY</div>
+
+      <div class="cover-image-frame">
+        <img id="coverMainImage" src="" alt="웨딩 메인 사진" />
+      </div>
+
+      <div class="cover-names-en" id="coverNamesEn">Sihyeon &amp; Yunji</div>
+      <div class="cover-names-kr">
+        <span id="groomNameKr">임시현</span>
+        <span class="amp"> 그리고 </span>
+        <span id="brideNameKr">이윤지</span>
+      </div>
+
+      <p class="cover-datetime" id="coverDateTimeText"></p>
+      <p class="cover-venue" id="coverVenueText"></p>
+
+      <!-- D-Day 카운트다운 -->
+      <div class="countdown-wrap">
+        <div class="countdown-boxes">
+          <div class="cd-item">
+            <span class="cd-num" id="cdDays">00</span>
+            <span class="cd-label">Days</span>
+          </div>
+          <span class="cd-colon">:</span>
+          <div class="cd-item">
+            <span class="cd-num" id="cdHours">00</span>
+            <span class="cd-label">Hours</span>
+          </div>
+          <span class="cd-colon">:</span>
+          <div class="cd-item">
+            <span class="cd-num" id="cdMins">00</span>
+            <span class="cd-label">Mins</span>
+          </div>
+          <span class="cd-colon">:</span>
+          <div class="cd-item">
+            <span class="cd-num" id="cdSecs">00</span>
+            <span class="cd-label">Secs</span>
+          </div>
+        </div>
+        <p class="countdown-message" id="countdownMessage"></p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         2. 초대 문구 및 연락처 (Invitation)
+         ======================================================================== -->
+    <section class="fade-in">
+      <span class="section-eng-title">Invitation</span>
+      <h2 class="section-kr-title">소중한 분들을 초대합니다</h2>
+      <div class="divider"></div>
+
+      <p class="invitation-poem" id="invitationPoem"></p>
+
+      <!-- 혼주 및 신랑·신부 소개 -->
+      <div class="family-info-box" id="familyInfoBox"></div>
+
+      <!-- 신랑/신부 직통 전화·문자 -->
+      <div class="contact-cards" id="coupleContactCards"></div>
+
+      <!-- 혼주 연락처 토글 -->
+      <button type="button" class="btn parents-contact-toggle" id="parentsToggleBtn">
+        혼주에게 연락하기 <span id="parentsToggleArrow">▼</span>
+      </button>
+      <div class="parents-contact-panel" id="parentsContactPanel"></div>
+    </section>
+
+    <!-- ========================================================================
+         3. 갤러리 (Gallery)
+         ======================================================================== -->
+    <section class="bg-alt fade-in">
+      <span class="section-eng-title">Gallery</span>
+      <h2 class="section-kr-title">우리의 소중한 순간</h2>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
+      <p class="gallery-hint">사진을 터치하시면 전체 화면으로 보실 수 있습니다.</p>
+    </section>
+
+    <!-- ========================================================================
+         4. 오시는 길 & 지도 (Location)
+         ======================================================================== -->
+    <section class="fade-in">
+      <span class="section-eng-title">Location</span>
+      <h2 class="section-kr-title">오시는 길</h2>
+
+      <div class="venue-box">
+        <h3 class="venue-name" id="locVenueName"></h3>
+        <p class="venue-address" id="locVenueAddress"></p>
+        <p class="venue-tel" id="locVenueTel"></p>
+        <button type="button" class="btn" id="copyAddressBtn">
+          📋 도로명 주소 복사하기
+        </button>
+      </div>
+
+      <!-- 지도 영역 (OpenStreetMap 내장 뷰) -->
+      <div class="map-frame">
+        <iframe id="mapIframe" title="예식장 위치 지도" loading="lazy"></iframe>
+      </div>
+
+      <!-- 3대 내비게이션 딥링크 버튼 -->
+      <div class="nav-buttons">
+        <a href="#" class="nav-btn" id="btnNaverMap">
+          <span class="nav-badge badge-naver">N</span> 네이버 지도
+        </a>
+        <a href="#" class="nav-btn" id="btnKakaoMap">
+          <span class="nav-badge badge-kakao">K</span> 카카오맵
+        </a>
+        <a href="#" class="nav-btn" id="btnTmap">
+          <span class="nav-badge badge-tmap">T</span> 티맵
+        </a>
+      </div>
+
+      <!-- 교통편 안내 -->
+      <div class="transport-list" id="transportList"></div>
+    </section>
+
+    <!-- ========================================================================
+         5. 마음 전하실 곳 (Account Accordion)
+         ======================================================================== -->
+    <section class="bg-alt fade-in">
+      <span class="section-eng-title">For Your Heart</span>
+      <h2 class="section-kr-title">마음 전하실 곳</h2>
+      <p class="account-desc">
+        참석이 어려우신 분들을 위해<br />
+        축하의 마음을 전하실 수 있는 계좌번호를 안내드립니다.
+      </p>
+
+      <div class="accordion-group" id="accountAccordion"></div>
+    </section>
+
+    <!-- ========================================================================
+         6. 참석 여부 전달 (RSVP)
+         ======================================================================== -->
+    <section class="fade-in">
+      <span class="section-eng-title">R.S.V.P</span>
+      <h2 class="section-kr-title">참석 의사 전달하기</h2>
+      <p class="account-desc">
+        귀한 걸음 하시는 모든 분들을 정성껏 모실 수 있도록<br />
+        참석 및 식사 여부를 미리 알려주시면 감사하겠습니다.
+      </p>
+
+      <form class="rsvp-card" id="rsvpForm">
+        <div class="form-group">
+          <span class="form-label">어느 분의 하객이신가요?</span>
+          <div class="radio-group" data-group="side">
+            <label class="radio-label selected">
+              <input type="radio" name="side" value="신랑측" checked /> 신랑측
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="side" value="신부측" /> 신부측
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">참석 여부</span>
+          <div class="radio-group" data-group="attendance">
+            <label class="radio-label selected">
+              <input type="radio" name="attendance" value="참석" checked /> 참석할게요
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="attendance" value="불참" /> 마음만 전할게요
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="guestName">성함 (외 동반 인원)</label>
+          <input type="text" id="guestName" class="form-input" placeholder="예: 홍길동 (외 1명)" required />
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">식사 여부</span>
+          <div class="radio-group cols-3" data-group="meal">
+            <label class="radio-label selected">
+              <input type="radio" name="meal" value="식사함" checked /> 식사함
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="meal" value="식사안함" /> 식사안함
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="meal" value="미정" /> 미정
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="guestMsg">축하 메시지 (선택)</label>
+          <input type="text" id="guestMsg" class="form-input" placeholder="따뜻한 축하의 한마디를 남겨주세요" />
+        </div>
+
+        <div class="rsvp-submit-wrap">
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            참석 의사 전달하기
+          </button>
+          <a href="#" id="googleFormLinkBtn" target="_blank" rel="noopener" class="btn" style="width:100%; display:none;">
+            구글 폼(Google Forms)으로 작성하기 ↗
+          </a>
+        </div>
+      </form>
+    </section>
+
+    <!-- 푸터 및 공유하기 버튼 -->
+    <footer>
+      <div class="share-btn-wrap">
+        <button type="button" class="btn btn-kakao-share" id="btnShareInvitation">
+          💬 카카오톡 / 청첩장 공유하기
+        </button>
+        <button type="button" class="btn" id="btnCopyUrl">
+          🔗 링크 복사
+        </button>
+      </div>
+      <div class="footer-names" id="footerNames">SIHYEON &amp; YUNJI</div>
+      <p>저희 두 사람의 새로운 시작을 축복해 주셔서 감사합니다.</p>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================================================
+       갤러리 전체화면 라이트박스 모달
+       ========================================================================== -->
+  <div class="lightbox" id="lightboxModal" role="dialog" aria-modal="true">
+    <div class="lightbox-header">
+      <span id="lightboxCounter">1 / 6</span>
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="닫기">&times;</button>
+    </div>
+    <div class="lightbox-img-container" id="lightboxTouchArea">
+      <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="이전 사진">&#10094;</button>
+      <img id="lightboxImg" src="" alt="갤러리 확대 이미지" />
+      <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="다음 사진">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       클립보드 복사 / 알림용 토스트(Toast)
+       ========================================================================== -->
+  <div class="toast" id="toastMsg">복사되었습니다.</div>
+
+  <!-- ==========================================================================
+       JavaScript: 데이터 설정 및 인터랙션 로직
+       ========================================================================== -->
+  <script>
+    /****************************************************************************
+     * [1] 사용자 맞춤 설정 영역 (이곳의 텍스트와 사진 URL만 수정하시면 됩니다)
+     ****************************************************************************/
+
+    // 1-1. 갤러리 사진 배열 (원하시는 사진 URL을 자유롭게 추가/삭제하세요)
+    const galleryPhotos = [
+      "./260929_ARVE_0571.JPG",
+      "./260929_ARVE_0719.JPG",
+      "./260929_ARVE_0998.JPG",
+      "./260929_ARVE_1211.JPG",
+      "./260929_ARVE_1958.JPG",
+      "./260929_ARVE_1998.JPG"
+    ];
+
+    // 1-2. 청첩장 기본 정보 설정 객체
+    const WEDDING_CONFIG = {
+      // 메인 커버 대표 사진 URL
+      coverPhoto: "./260929_ARVE_2000.JPG",
+
+      // 예식 일시 (ISO 포맷: YYYY-MM-DDTHH:mm:ss -> 카운트다운 자동 계산)
+      weddingDateISO: "2027-06-06T11:00:00",
+      weddingDateCoverTop: "2027. 06. 06",
+      weddingDateText: "2027년 6월 6일 일요일 오전 11시",
+
+      // 신랑 정보
+      groom: {
+        nameKr: "임시현",
+        firstNameKr: "시현",
+        nameEn: "Sihyeon",
+        relation: "장남",
+        phone: "010-6794-3699",
+        father: { name: "임근태", phone: "010-4529-2856" },
+        mother: { name: "심영란", phone: "010-7315-1318" }
+      },
+
+      // 신부 정보
+      bride: {
+        nameKr: "이윤지",
+        firstNameKr: "윤지",
+        nameEn: "Yunji",
+        relation: "삼녀",
+        phone: "010-2058-4135",
+        father: { name: "이주형", phone: "010-5555-6666" },
+        mother: { name: "허율임", phone: "010-7777-8888" }
+      },
+
+      // 초대 글귀 (줄바꿈 그대로 반영)
+      invitationPoem: `계절이 흐르고 시간이 쌓여
+서로의 가장 따뜻한 안식처가 된 저희 두 사람이
+이제 한 곳을 바라보며 함께 걸어가려 합니다.
+
+푸른 바다와 바람 아래 약속했던 마음 그대로
+아끼고 배려하며 예쁘게 살겠습니다.
+
+귀한 걸음 하시어 저희의 새로운 시작을
+가까이에서 축복해 주시면 더없는 기쁨으로 간직하겠습니다.`,
+
+      // 예식장 및 오시는 길 정보 (세인트 메리엘 기본 세팅)
+      location: {
+        venueName: "세인트 메리엘",
+        hallName: "세인트홀 (2F)",
+        address: "서울특별시 강남구 논현로79길 72 (역삼동, 올림피아센타)",
+        tel: "Tel. 02-555-0000",
+        lat: 37.49606, // 위도
+        lng: 127.03286, // 경도
+        transports: [
+          {
+            title: "🚇 지하철 이용 시",
+            desc: "• 2호선 · 신분당선 강남역 1번 또는 4번 출구 도보 약 5~7분\n• 강남역 인근 셔틀버스 운행"
+          },
+          {
+            title: "🚌 버스 이용 시",
+            desc: "• 간선(파랑): 140, 400, 402, 407, 420, 440, 470\n• 광역(빨강): 9404, 9408, 9711 (강남역 역삼세무서 정류장 하차)"
+          },
+          {
+            title: "🚗 자가용 및 주차 안내",
+            desc: "• 내비게이션에 '세인트 메리엘' 또는 '논현로79길 72' 검색\n• 건물 내·외부 주차장 약 600대 수용 (하객 무료 주차 지원)"
+          }
+        ]
+      },
+
+      // 축의금 계좌번호 목록
+      accounts: [
+        {
+          groupTitle: "신랑측 계좌번호 보기",
+          items: [
+            { role: "신랑", name: "임시현", bank: "신한은행", number: "110-432-172190" },
+            { role: "신랑 아버지", name: "임OO", bank: "국민은행", number: "123401-04-000000" },
+            { role: "신랑 어머니", name: "김OO", bank: "신한은행", number: "110-000-000000" }
+          ]
+        },
+        {
+          groupTitle: "신부측 계좌번호 보기",
+          items: [
+            { role: "신부", name: "이윤지", bank: "카카오뱅크", number: "3333-00-0000000" },
+            { role: "신부 아버지", name: "이OO", bank: "하나은행", number: "123-000000-00000" },
+            { role: "신부 어머니", name: "박OO", bank: "농협은행", number: "302-0000-0000-00" }
+          ]
+        }
+      ],
+
+      // 구글 폼(Google Forms) 외부 링크 (입력 시 하단에 구글 폼 이동 버튼 활성화, 비워두면 자체 폼만 작동)
+      rsvpGoogleFormUrl: ""
+    };
+
+    /****************************************************************************
+     * [2] 데이터 바인딩 및 UI 렌더링
+     ****************************************************************************/
+    document.addEventListener("DOMContentLoaded", () => {
+      initSecurityProtection();
+      initCoverSection();
+      initCountdown();
+      initInvitationSection();
+      initGallerySection();
+      initLocationSection();
+      initAccountSection();
+      initRsvpSection();
+      initShareButtons();
+      initScrollFadeIn();
+    });
+
+    // 토스트 알림 함수
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById("toastMsg");
+      toast.textContent = message;
+      toast.classList.add("show");
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2400);
+    }
+
+    // 클립보드 복사 함수 (모던 API + 구형 브라우저 폴백 지원)
+    function copyToClipboard(text, successMsg) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg);
+        }).catch(() => fallbackCopy(text, successMsg));
+      } else {
+        fallbackCopy(text, successMsg);
+      }
+    }
+
+    function fallbackCopy(text, successMsg) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand("copy");
+        showToast(successMsg);
+      } catch (e) {
+        showToast("복사에 실패했습니다. 길게 눌러 복사해주세요.");
+      }
+      document.body.removeChild(ta);
+    }
+
+    /****************************************************************************
+     * [보안 모듈] 화면 확대(핀치 줌/더블탭) 및 사진 저장/캡처 단축키 차단
+     ****************************************************************************/
+    function initSecurityProtection() {
+      // 1. iOS 사파리 핀치 줌(두 손가락 확대/축소) 차단
+      document.addEventListener("gesturestart", (e) => e.preventDefault(), { passive: false });
+      document.addEventListener("gesturechange", (e) => e.preventDefault(), { passive: false });
+      document.addEventListener("gestureend", (e) => e.preventDefault(), { passive: false });
+
+      // 2. 멀티터치(두 손가락 이상) 터치 및 이동 확대 차단
+      document.addEventListener("touchstart", (e) => {
+        if (e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      document.addEventListener("touchmove", (e) => {
+        if (e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      // 3. 더블 탭(빠르게 두 번 터치) 확대 차단
+      let lastTouchEnd = 0;
+      document.addEventListener("touchend", (e) => {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          e.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, { passive: false });
+
+      // 4. PC Ctrl + 마우스 휠 확대/축소 차단
+      window.addEventListener("wheel", (e) => {
+        if (e.ctrlKey || e.metaKey) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      // 5. 우클릭 및 모바일 길게 누르기 컨텍스트 메뉴(이미지 저장 등) 차단
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        return false;
+      });
+
+      // 6. 이미지 및 텍스트 드래그 차단 (입력창 제외)
+      document.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+        return false;
+      });
+
+      document.addEventListener("selectstart", (e) => {
+        if (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // 7. 캡처 및 저장/개발자도구 단축키 차단 (PrintScreen, F12, Ctrl+S, Ctrl+P, Ctrl+U 등)
+      document.addEventListener("keydown", (e) => {
+        const key = e.key.toLowerCase();
+        const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+
+        // F12 또는 캡처/소스보기/인쇄/저장 단축키 차단
+        if (
+          e.key === "F12" ||
+          e.key === "PrintScreen" ||
+          (isCtrlOrCmd && (key === "s" || key === "p" || key === "u" || key === "+" || key === "-" || key === "=")) ||
+          (isCtrlOrCmd && e.shiftKey && (key === "i" || key === "j" || key === "c" || key === "s" || key === "3" || key === "4"))
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          showToast("보안 정책상 캡처 및 저장이 제한되어 있습니다.");
+          return false;
+        }
+      });
+
+      // PrintScreen 키를 뗄 때 클립보드 초기화 시도
+      document.addEventListener("keyup", (e) => {
+        if (e.key === "PrintScreen") {
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText("").catch(() => {});
+          }
+          showToast("화면 캡처가 제한되어 있습니다.");
+        }
+      });
+    }
+
+    // 1. 메인 커버 렌더링
+    function initCoverSection() {
+      const { groom, bride, location } = WEDDING_CONFIG;
+      document.getElementById("coverTopDate").textContent = WEDDING_CONFIG.weddingDateCoverTop;
+      document.getElementById("coverMainImage").src = WEDDING_CONFIG.coverPhoto;
+      document.getElementById("coverNamesEn").textContent = `${groom.nameEn} & ${bride.nameEn}`;
+      document.getElementById("groomNameKr").textContent = groom.nameKr;
+      document.getElementById("brideNameKr").textContent = bride.nameKr;
+      document.getElementById("coverDateTimeText").textContent = WEDDING_CONFIG.weddingDateText;
+      document.getElementById("coverVenueText").textContent = `${location.venueName} ${location.hallName}`;
+      document.getElementById("footerNames").textContent = `${groom.nameEn.toUpperCase()} & ${bride.nameEn.toUpperCase()}`;
+    }
+
+    // D-Day 실시간 카운트다운
+    function initCountdown() {
+      const targetTime = new Date(WEDDING_CONFIG.weddingDateISO).getTime();
+      const { groom, bride } = WEDDING_CONFIG;
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const diff = targetTime - now;
+
+        if (diff <= 0) {
+          document.getElementById("cdDays").textContent = "00";
+          document.getElementById("cdHours").textContent = "00";
+          document.getElementById("cdMins").textContent = "00";
+          document.getElementById("cdSecs").textContent = "00";
+          document.getElementById("countdownMessage").innerHTML =
+            `${groom.firstNameKr} ♥ ${bride.firstNameKr}의 행복한 결혼 날입니다.`;
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("cdDays").textContent = String(days).padStart(2, "0");
+        document.getElementById("cdHours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("cdMins").textContent = String(mins).padStart(2, "0");
+        document.getElementById("cdSecs").textContent = String(secs).padStart(2, "0");
+
+        document.getElementById("countdownMessage").innerHTML =
+          `${groom.firstNameKr} ♥ ${bride.firstNameKr}의 결혼식이 <strong>${days}일</strong> 남았습니다.`;
+      }
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    // 2. 초대 문구 및 연락처 렌더링
+    function initInvitationSection() {
+      const { groom, bride, invitationPoem } = WEDDING_CONFIG;
+      document.getElementById("invitationPoem").textContent = invitationPoem;
+
+      // 혼주·신랑신부 소개
+      document.getElementById("familyInfoBox").innerHTML = `
+        <div class="family-row">
+          <span class="family-parents">${groom.father.name} · ${groom.mother.name}</span>
+          <span class="family-relation">의 ${groom.relation}</span>
+          <span class="family-child">${groom.nameKr}</span>
+        </div>
+        <div class="family-row">
+          <span class="family-parents">${bride.father.name} · ${bride.mother.name}</span>
+          <span class="family-relation">의 ${bride.relation}</span>
+          <span class="family-child">${bride.nameKr}</span>
+        </div>
+      `;
+
+      // 신랑/신부 연락처 카드
+      const phoneSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+      const smsSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`;
+
+      document.getElementById("coupleContactCards").innerHTML = `
+        <div class="contact-card">
+          <span class="contact-role">신랑에게 연락하기</span>
+          <span class="contact-name">${groom.nameKr}</span>
+          <div class="contact-actions">
+            <a href="tel:${groom.phone}" class="icon-btn" aria-label="신랑에게 전화">${phoneSvg}</a>
+            <a href="sms:${groom.phone}" class="icon-btn" aria-label="신랑에게 문자">${smsSvg}</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="contact-role">신부에게 연락하기</span>
+          <span class="contact-name">${bride.nameKr}</span>
+          <div class="contact-actions">
+            <a href="tel:${bride.phone}" class="icon-btn" aria-label="신부에게 전화">${phoneSvg}</a>
+            <a href="sms:${bride.phone}" class="icon-btn" aria-label="신부에게 문자">${smsSvg}</a>
+          </div>
+        </div>
+      `;
+
+      // 혼주 연락처 패널
+      const panel = document.getElementById("parentsContactPanel");
+      panel.innerHTML = `
+        <div class="parents-group-title" style="margin-top:2px;">신랑측 혼주</div>
+        <div class="parents-row">
+          <span>아버지 <strong>${groom.father.name}</strong></span>
+          <div class="contact-actions">
+            <a href="tel:${groom.father.phone}" class="icon-btn">${phoneSvg}</a>
+            <a href="sms:${groom.father.phone}" class="icon-btn">${smsSvg}</a>
+          </div>
+        </div>
+        <div class="parents-row">
+          <span>어머니 <strong>${groom.mother.name}</strong></span>
+          <div class="contact-actions">
+            <a href="tel:${groom.mother.phone}" class="icon-btn">${phoneSvg}</a>
+            <a href="sms:${groom.mother.phone}" class="icon-btn">${smsSvg}</a>
+          </div>
+        </div>
+        <div class="parents-group-title" style="margin-top:14px;">신부측 혼주</div>
+        <div class="parents-row">
+          <span>아버지 <strong>${bride.father.name}</strong></span>
+          <div class="contact-actions">
+            <a href="tel:${bride.father.phone}" class="icon-btn">${phoneSvg}</a>
+            <a href="sms:${bride.father.phone}" class="icon-btn">${smsSvg}</a>
+          </div>
+        </div>
+        <div class="parents-row">
+          <span>어머니 <strong>${bride.mother.name}</strong></span>
+          <div class="contact-actions">
+            <a href="tel:${bride.mother.phone}" class="icon-btn">${phoneSvg}</a>
+            <a href="sms:${bride.mother.phone}" class="icon-btn">${smsSvg}</a>
+          </div>
+        </div>
+      `;
+
+      const toggleBtn = document.getElementById("parentsToggleBtn");
+      const toggleArrow = document.getElementById("parentsToggleArrow");
+      toggleBtn.addEventListener("click", () => {
+        const isOpen = panel.classList.toggle("open");
+        toggleArrow.textContent = isOpen ? "▲" : "▼";
+      });
+    }
+
+    // 3. 갤러리 및 라이트박스 모달 (터치 스와이프 지원)
+    function initGallerySection() {
+      const grid = document.getElementById("galleryGrid");
+      const modal = document.getElementById("lightboxModal");
+      const modalImg = document.getElementById("lightboxImg");
+      const counter = document.getElementById("lightboxCounter");
+      let currentIndex = 0;
+
+      galleryPhotos.forEach((url, idx) => {
+        const item = document.createElement("div");
+        item.className = "gallery-item";
+        item.innerHTML = `<img src="${url}" alt="웨딩 갤러리 사진 ${idx + 1}" loading="lazy" />`;
+        item.addEventListener("click", () => openLightbox(idx));
+        grid.appendChild(item);
+      });
+
+      function updateLightbox() {
+        modalImg.src = galleryPhotos[currentIndex];
+        counter.textContent = `${currentIndex + 1} / ${galleryPhotos.length}`;
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        updateLightbox();
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      function showPrev(e) {
+        if (e) e.stopPropagation();
+        currentIndex = (currentIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+        updateLightbox();
+      }
+
+      function showNext(e) {
+        if (e) e.stopPropagation();
+        currentIndex = (currentIndex + 1) % galleryPhotos.length;
+        updateLightbox();
+      }
+
+      document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+      document.getElementById("lightboxPrev").addEventListener("click", showPrev);
+      document.getElementById("lightboxNext").addEventListener("click", showNext);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeLightbox();
+      });
+
+      // 모바일 터치 스와이프 제스처 지원
+      let touchStartX = 0;
+      const touchArea = document.getElementById("lightboxTouchArea");
+      touchArea.addEventListener("touchstart", (e) => {
+        if (e.touches.length === 1) {
+          touchStartX = e.changedTouches[0].screenX;
+        }
+      }, { passive: true });
+
+      touchArea.addEventListener("touchend", (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const delta = touchEndX - touchStartX;
+        if (Math.abs(delta) > 40) {
+          delta > 0 ? showPrev() : showNext();
+        }
+      }, { passive: true });
+    }
+
+    // 4. 오시는 길 & 내비게이션 딥링크
+    function initLocationSection() {
+      const loc = WEDDING_CONFIG.location;
+      document.getElementById("locVenueName").textContent = `${loc.venueName} ${loc.hallName}`;
+      document.getElementById("locVenueAddress").textContent = loc.address;
+      document.getElementById("locVenueTel").textContent = loc.tel;
+
+      // 주소 복사
+      document.getElementById("copyAddressBtn").addEventListener("click", () => {
+        copyToClipboard(loc.address, "도로명 주소가 복사되었습니다.");
+      });
+
+      // OpenStreetMap 지도 임베드
+      const bbox = `${loc.lng - 0.0035}%2C${loc.lat - 0.0025}%2C${loc.lng + 0.0035}%2C${loc.lat + 0.0025}`;
+      document.getElementById("mapIframe").src =
+        `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${loc.lat}%2C${loc.lng}`;
+
+      // 모바일 여부 판별
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const encodedName = encodeURIComponent(loc.venueName);
+
+      // 네이버 지도 딥링크 + 웹 대체 링크
+      document.getElementById("btnNaverMap").addEventListener("click", (e) => {
+        e.preventDefault();
+        const webUrl = `https://map.naver.com/p/search/${encodedName}`;
+        if (isMobile) {
+          const appUrl = `nmap://place?lat=${loc.lat}&lng=${loc.lng}&name=${encodedName}&appname=wedding.invitation`;
+          const clickedAt = +new Date();
+          window.location.href = appUrl;
+          setTimeout(() => {
+            if (+new Date() - clickedAt < 1800) window.open(webUrl, "_blank");
+          }, 1200);
+        } else {
+          window.open(webUrl, "_blank");
+        }
+      });
+
+      // 카카오맵 딥링크 + 웹 대체 링크
+      document.getElementById("btnKakaoMap").addEventListener("click", (e) => {
+        e.preventDefault();
+        const webUrl = `https://map.kakao.com/link/to/${encodedName},${loc.lat},${loc.lng}`;
+        if (isMobile) {
+          const appUrl = `kakaomap://look?p=${loc.lat},${loc.lng}`;
+          const clickedAt = +new Date();
+          window.location.href = appUrl;
+          setTimeout(() => {
+            if (+new Date() - clickedAt < 1800) window.open(webUrl, "_blank");
+          }, 1200);
+        } else {
+          window.open(webUrl, "_blank");
+        }
+      });
+
+      // 티맵 딥링크
+      document.getElementById("btnTmap").addEventListener("click", (e) => {
+        e.preventDefault();
+        if (isMobile) {
+          window.location.href = `tmap://route?goalname=${encodedName}&goalx=${loc.lng}&goaly=${loc.lat}`;
+        } else {
+          showToast("티맵 길안내는 스마트폰(모바일)에서 실행됩니다.");
+        }
+      });
+
+      // 대중교통 및 주차 안내 렌더링
+      const transportList = document.getElementById("transportList");
+      loc.transports.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "transport-item";
+        div.innerHTML = `
+          <div class="transport-title">${item.title}</div>
+          <div class="transport-desc">${item.desc}</div>
+        `;
+        transportList.appendChild(div);
+      });
+    }
+
+    // 5. 계좌번호 아코디언 및 클립보드 복사
+    function initAccountSection() {
+      const container = document.getElementById("accountAccordion");
+
+      WEDDING_CONFIG.accounts.forEach((group, groupIdx) => {
+        const accItem = document.createElement("div");
+        accItem.className = "accordion-item" + (groupIdx === 0 ? " active" : "");
+
+        const rowsHtml = group.items.map((acc) => `
+          <div class="account-row">
+            <div>
+              <div class="account-holder">${acc.role} <span class="account-HolderName">${acc.name}</span></div>
+              <div class="account-number">${acc.bank} ${acc.number}</div>
+            </div>
+            <button type="button" class="btn-copy" data-account="${acc.bank} ${acc.number}">
+              복사
+            </button>
+          </div>
+        `).join("");
+
+        accItem.innerHTML = `
+          <button type="button" class="accordion-header">
+            <span>${group.groupTitle}</span>
+            <span class="accordion-arrow">▼</span>
+          </button>
+          <div class="accordion-body">
+            ${rowsHtml}
+          </div>
+        `;
+
+        // 아코디언 헤더 클릭 이벤트
+        accItem.querySelector(".accordion-header").addEventListener("click", () => {
+          accItem.classList.toggle("active");
+        });
+
+        container.appendChild(accItem);
+      });
+
+      // 복사 버튼 이벤트 위임
+      container.addEventListener("click", (e) => {
+        const copyBtn = e.target.closest(".btn-copy");
+        if (!copyBtn) return;
+        const accountStr = copyBtn.getAttribute("data-account");
+        copyToClipboard(accountStr, "계좌번호가 복사되었습니다");
+      });
+    }
+
+    // 6. 참석 여부(RSVP) 폼 제어
+    function initRsvpSection() {
+      // 라디오 버튼 스타일 토글
+      document.querySelectorAll(".radio-group").forEach((group) => {
+        group.addEventListener("change", (e) => {
+          if (e.target.type === "radio") {
+            group.querySelectorAll(".radio-label").forEach((lbl) => lbl.classList.remove("selected"));
+            e.target.closest(".radio-label").classList.add("selected");
+          }
+        });
+      });
+
+      // 구글 폼 URL이 설정된 경우 버튼 활성화
+      const googleFormBtn = document.getElementById("googleFormLinkBtn");
+      if (WEDDING_CONFIG.rsvpGoogleFormUrl && WEDDING_CONFIG.rsvpGoogleFormUrl.trim() !== "") {
+        googleFormBtn.href = WEDDING_CONFIG.rsvpGoogleFormUrl;
+        googleFormBtn.style.display = "inline-flex";
+      }
+
+      // 기본 폼 제출 이벤트
+      document.getElementById("rsvpForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("guestName").value.trim();
+        const side = document.querySelector('input[name="side"]:checked').value;
+        const attendance = document.querySelector('input[name="attendance"]:checked').value;
+        const meal = document.querySelector('input[name="meal"]:checked').value;
+
+        if (!name) {
+          showToast("성함을 입력해주세요.");
+          return;
+        }
+
+        if (WEDDING_CONFIG.rsvpGoogleFormUrl && WEDDING_CONFIG.rsvpGoogleFormUrl.trim() !== "") {
+          window.open(WEDDING_CONFIG.rsvpGoogleFormUrl, "_blank");
+        } else {
+          showToast(`${name}님(${side}/${attendance}/${meal}) 참석 의사가 전달되었습니다.`);
+          e.target.reset();
+          // 선택 상태 초기화
+          document.querySelectorAll(".radio-group").forEach((group) => {
+            const labels = group.querySelectorAll(".radio-label");
+            labels.forEach((l, i) => l.classList.toggle("selected", i === 0));
+          });
+        }
+      });
+    }
+
+    // 7. 하단 카카오톡 / 링크 공유하기 버튼
+    function initShareButtons() {
+      const shareData = {
+        title: `${WEDDING_CONFIG.groom.nameKr} ♥ ${WEDDING_CONFIG.bride.nameKr} 결혼식에 초대합니다`,
+        text: `${WEDDING_CONFIG.weddingDateText} | ${WEDDING_CONFIG.location.venueName} ${WEDDING_CONFIG.location.hallName}`,
+        url: window.location.href
+      };
+
+      document.getElementById("btnShareInvitation").addEventListener("click", async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {
+            // 사용자가 공유 창을 닫은 경우 무시
+          }
+        } else {
+          copyToClipboard(window.location.href, "청첩장 링크가 복사되었습니다. 카카오톡에 붙여넣어 주세요.");
+        }
+      });
+
+      document.getElementById("btnCopyUrl").addEventListener("click", () => {
+        copyToClipboard(window.location.href, "청첩장 링크가 복사되었습니다.");
+      });
+    }
+
+    // 8. Intersection Observer 기반 스크롤 Fade-in 효과
+    function initScrollFadeIn() {
+      const fadeElements = document.querySelectorAll(".fade-in");
+      if (!("IntersectionObserver" in window)) {
+        fadeElements.forEach((el) => el.classList.add("visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -30px 0px"
+      });
+
+      fadeElements.forEach((el) => observer.observe(el));
+    }
+  </script>
+</body>
+</html>
